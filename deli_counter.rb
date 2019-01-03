@@ -9,11 +9,24 @@ def line(katz_deli)
   end
 end
 
-def take_a_number(katz_deli, name)
+last_ticket=1
+
+def take_a_number(katz_deli)
+  
+  if katz_deli!=[]
   place = katz_deli.length+1
-  katz_deli[place-1]=name
-  puts "Welcome, #{name}. You are number #{place} in line."
+  next_ticket = katz_deli[place-1] + 1
+  katz_deli.push(next_ticket)
+  
+else
+  katz_deli[0]=last_ticket
+  
 end
+puts "Ticket number: #{last_ticket}, is number #{place} in line."
+last_ticket+=1
+end
+
+
 
 def now_serving(katz_deli)
   if katz_deli == []
